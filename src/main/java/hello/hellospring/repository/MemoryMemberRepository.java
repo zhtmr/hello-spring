@@ -1,13 +1,15 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 // DB 가 정해지지 않은 상황을 가정한 구현체
+//@Repository  --> @Bean 으로 등록가능
 public class MemoryMemberRepository implements MemberRepository{
 
-    private static Map<Long, Member> store = new HashMap<>();
+    private static Map<Long, Member> store = new HashMap<>(); // db 같은개념
     private static long seq = 0L;
 
     @Override
