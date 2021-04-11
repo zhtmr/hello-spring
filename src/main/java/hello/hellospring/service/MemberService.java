@@ -5,11 +5,13 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional // jpa 쓰기위해선 필요
 public class MemberService {
     
 //    private final MemberRepository memberRepository = new MemoryMemberRepository(); // new 하면 새로운 인스턴스(다른 db)가 된다. -> 의존성 주입으로 바꿈
